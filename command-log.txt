@@ -9,3 +9,12 @@ gh repo view --web
 
 git checkout -b develop
 git push origin develop
+
+git checkout -b feature/ci
+git push origin feature/ci
+
+# excluida remotamente após o merge da PR
+git branch -d feature/ci
+
+git checkout -b feature/ci-matrix
+git push origin feature/ci-matrix
