@@ -3,3 +3,6 @@ git init
 go mod init exemplo-ci/math
 go run math.go
 go test
+
+gh repo create
+gh repo view --web
