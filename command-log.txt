@@ -6,3 +6,6 @@ go test
 
 gh repo create
 gh repo view --web
+
+git checkout -b develop
+git push origin develop
