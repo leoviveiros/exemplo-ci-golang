@@ -1,8 +1,12 @@
-git init
+### GOLANG ###
 
 go mod init exemplo-ci/math
 go run math.go
 go test
+
+### GIT ###
+
+git init
 
 gh repo create
 gh repo view --web
@@ -18,3 +22,11 @@ git branch -d feature/ci
 
 git checkout -b feature/ci-matrix
 git push origin feature/ci-matrix
+
+# excluida remotamente após o merge da PR
+git branch -d feature/ci-matrix
+
+### DOCKER ###
+
+docker build -t math-app .
+docker run --rm math-app
