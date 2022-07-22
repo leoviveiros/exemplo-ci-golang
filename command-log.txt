@@ -3,6 +3,7 @@
 go mod init exemplo-ci/math
 go run math.go
 go test
+go test -test.coverprofile coverage.out
 
 ### GIT ###
 
@@ -30,3 +31,13 @@ git branch -d feature/ci-matrix
 
 docker build -t math-app .
 docker run --rm math-app
+docker run --rm leoviveiros/exemplo-ci-golang
+
+### SONARQUBE ###
+
+http://localhost:9000/
+
+sonar-scanner.bat -D"sonar.projectKey=exemplo-ci-golang" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=sqp_5c98f2ec977854a0b51d37483ba4a9d093e03e78"
+
+# lê arquivo properties
+sonar-scanner.bat
